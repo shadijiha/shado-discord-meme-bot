@@ -1,0 +1,26 @@
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="styles.css" />
+		<title></title>
+	</head>
+	<body>
+		<br />
+		<h1 id="top_title">Click on the meme to copy bot command</h1>
+		<input
+			type="text"
+			id="search_bar"
+			onkeyup="search(this.value);"
+			placeholder="Seach meme by name or ID..."
+		/>
+		<br />
+		<br />
+		<div id="core"></div>
+		<p style="display:none;">
+			<button id="js-textareacopybtn">
+				Copy Textarea
+			</button>
+			<textarea id="js-copytextarea">MEME ID HERE</textarea>
+		</p>
+		<script src="meme_getter.js"></script>
+	</body>
+</html>
