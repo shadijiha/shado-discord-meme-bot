@@ -8,7 +8,7 @@ from discord.ext import commands
 
 
 # Discord Bot Token
-token = "Njc0MTE5NDkyOTYzNTMyODMw.XjnI7A.KPXJPHQ8h79bVltMqBnn61TyzP0"
+token = "Njc0MTE5NDkyOTYzNTMyODMw.XjnJMA.XmRSKeNmSgaW0--DbuiIx99yTX8"
 # imgflip account
 acc_username = "jshado"
 acc_password = "q&#RqmycL=7Hu@6e"
