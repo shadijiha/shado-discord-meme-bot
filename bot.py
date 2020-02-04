@@ -51,6 +51,10 @@ async def meme(ctx, meme_id: str, *args):
     
   await ctx.send(data['data']['url'])
 
+async def templates(ctx) {
+  await ctx.replay("All memes here: https://shadijiha.github.io/shado-discord-meme-bot/index.html . Click on any meme to copy the bot command")
+}
+
 @bot.command(name='meme_templates')
 async def meme(ctx):
   await ctx.send('https://api.imgflip.com/popular_meme_ids')
