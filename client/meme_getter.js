@@ -2,12 +2,21 @@
  * Main JS file
  */
 
+const acc_username = "jshado";
+const acc_password = "q&#RqmycL=7Hu@6e";
+
 // Get all templates
 let allMemes = [];
 async function getTemplates() {
 	const raw = await fetch("https://api.imgflip.com/get_memes");
 	const json = await raw.json();
 	const data = await json.data.memes;
+
+	// for (const [i, meme] of data) {
+	// 	const url = "";
+
+	// 	const getData = await fetch("https://api.imgflip.com/caption_image");
+	// }
 
 	allMemes = data;
 
