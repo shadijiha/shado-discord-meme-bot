@@ -43,7 +43,7 @@ async function getTemplates() {
 
 	return data;
 }
-getTemplates();
+//getTemplates();
 
 async function displayMemes() {
 	const data = await getTemplates();
@@ -55,7 +55,7 @@ async function displayMemes() {
 		DIV.innerHTML += str;
 	}
 }
-//displayMemes();
+displayMemes();
 
 function search(str) {
 	const DIV = document.getElementById("core");
