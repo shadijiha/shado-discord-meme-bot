@@ -5,8 +5,14 @@ import os
 import requests
 from datetime import datetime
 
+# import discord API
 import discord
 from discord.ext import commands
+
+# import Math sruff
+import math
+from math import *
+from datetime import datetime
 
 # Get Enviroment variables
 from dotenv import load_dotenv
@@ -33,7 +39,6 @@ bot = commands.Bot(command_prefix='!')
 
 memes = requests.get(
     'https://api.imgflip.com/get_memes').json()['data']['memes']
-
 
 @bot.command(name='meme')
 async def meme(ctx, meme_id: str, *args):
@@ -78,13 +83,20 @@ async def meme(ctx):
     await ctx.send('All memes here: https://shadijiha.github.io/shado-discord-meme-bot/index.html . Click on any meme to copy the bot command')
 
 #if a message is a math operation, do the calculation
-@client.event
-async def on_message(message):
+@bot.command(name='eval')
+async def meme(ctx, *args :str):
+    stringR = ''
+    for s in args:
+        stringR += s
     try:
-        result = eval(message.content)
-        channel = message.channel
-        channel.send(" = " + result)  
-    except:
-        pass
+        result = eval(stringR)
+        await ctx.send('= ' + str(result))
+    except:        
+        await ctx.send(stringR + ' is not a valid math operation.')
+
+@bot.command(name='time')
+async def meme(ctx):   
+    now = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
+    await ctx.send("Today's date: " + str(now))
 
 bot.run(token)
