@@ -73,9 +73,18 @@ async def meme(ctx, meme_id: str, *args):
 
     await ctx.send(data['data']['url'])
 
-
 @bot.command(name='meme_templates')
 async def meme(ctx):
     await ctx.send('All memes here: https://shadijiha.github.io/shado-discord-meme-bot/index.html . Click on any meme to copy the bot command')
+
+#if a message is a math operation, do the calculation
+@client.event
+async def on_message(message):
+    try:
+        result = eval(message.content)
+        channel = message.channel
+        channel.send(" = " + result)  
+    except:
+        pass
 
 bot.run(token)
