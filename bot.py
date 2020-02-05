@@ -83,20 +83,20 @@ async def meme(ctx):
     await ctx.send('All memes here: https://shadijiha.github.io/shado-discord-meme-bot/index.html . Click on any meme to copy the bot command')
 
 #if a message is a math operation, do the calculation
-@bot.command(name='eval')
-async def meme(ctx, *args :str):
-    stringR = ''
-    for s in args:
-        stringR += s
-    try:
-        result = eval(stringR)
-        await ctx.send('= ' + str(result))
-    except:        
-        await ctx.send(stringR + ' is not a valid math operation.')
+# @bot.command(name='eval')
+# async def meme(ctx, *args :str):
+#     stringR = ''
+#     for s in args:
+#         stringR += s
+#     try:
+#         result = eval(stringR)
+#         await ctx.send('= ' + str(result))
+#     except:        
+#         await ctx.send(stringR + ' is not a valid math operation.')
 
-@bot.command(name='time')
-async def meme(ctx):   
-    now = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
-    await ctx.send("Today's date: " + str(now))
+# @bot.command(name='time')
+# async def meme(ctx):   
+#     now = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
+#     await ctx.send("Today's date: " + str(now))
 
 bot.run(token)
