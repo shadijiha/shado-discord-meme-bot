@@ -8,7 +8,7 @@ from discord.ext import commands
 
 
 # Discord Bot Token
-token = "Njc0MTE5NDkyOTYzNTMyODMw.XjnJMA.XmRSKeNmSgaW0--DbuiIx99yTX8"
+token = "Njc0MTE5NDkyOTYzNTMyODMw.XjnwGg.G-vMyaJ71jiNn8m4X_VY8oaxAEU"
 # imgflip account
 acc_username = "jshado"
 acc_password = "q&#RqmycL=7Hu@6e"
@@ -19,6 +19,7 @@ client = discord.Client()
 bot = commands.Bot(command_prefix='!')
 
 memes = requests.get('https://api.imgflip.com/get_memes').json()['data']['memes']
+
 
 @bot.command(name='meme')
 async def meme(ctx, meme_id: str, *args):
@@ -34,11 +35,17 @@ async def meme(ctx, meme_id: str, *args):
                 template_id = meme['id']
                 break
 
+    # put every string passed in arguments in boxes array
+    #boxes = []
+    #for arg in args:
+    #    boxes.append(dict(text=arg))
+
+    #Send request
     params = dict(template_id=template_id,username=acc_username, password=acc_password)
     for i, text in enumerate(args):
         params["text"+str(i)] = text
-    res = requests.get(url, params=params)
 
+    res = requests.get(url, params=params)
     data = res.json()
 
     # Check for valid template_id
