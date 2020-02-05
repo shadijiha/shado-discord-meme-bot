@@ -6,9 +6,21 @@ from datetime import datetime
 import discord
 from discord.ext import commands
 
+# Get Enviroment variables
+from dotenv import load_dotenv
+load_dotenv()
+
+# OR, the same with increased verbosity
+load_dotenv(verbose=True)
+
+# OR, explicitly providing path to '.env'
+from pathlib import Path  # python3 only
+env_path = Path('.') / '.env'
+load_dotenv(dotenv_path=env_path)
+
 
 # Discord Bot Token
-token = "Njc0MTE5NDkyOTYzNTMyODMw.XjnwGg.G-vMyaJ71jiNn8m4X_VY8oaxAEU"
+token = os.getenv("TOKEN")
 # imgflip account
 acc_username = "jshado"
 acc_password = "q&#RqmycL=7Hu@6e"

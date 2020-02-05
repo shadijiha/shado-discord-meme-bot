@@ -11,7 +11,7 @@ async function getTemplates() {
 	const raw = await fetch("https://api.imgflip.com/get_memes");
 	const json = await raw.json();
 	const data = await json.data.memes;
-	console.log(data);
+	/*console.log(data);
 	for (const [i, temp] of data.entries()) {
 		const options = {
 			template_id: Number(temp.id),
@@ -38,7 +38,7 @@ async function getTemplates() {
 		const response = await newImage.json();
 		data[i].url = response.data.url;
 	}
-	console.log(data);
+	console.log(data);*/
 	allMemes = data;
 
 	return data;
