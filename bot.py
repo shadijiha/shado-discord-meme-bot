@@ -18,9 +18,10 @@ from pathlib import Path  # python3 only
 env_path = Path('.') / '.env'
 load_dotenv(dotenv_path=env_path)
 
+from boto.s3.connection import S3Connection
 
 # Discord Bot Token
-token = os.getenv("TOKEN")
+token = os.environ['TOKEN']
 # imgflip account
 acc_username = "jshado"
 acc_password = "q&#RqmycL=7Hu@6e"
